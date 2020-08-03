@@ -4,6 +4,8 @@
 ## Database Representation
 
 ```
+#!mysql
+
 CREATE TABLE `product_bundles` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -29,4 +31,3 @@ CREATE TABLE `product_bundles` (
 ```
 
 ## Properties
-
