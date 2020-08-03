@@ -1,4 +1,4 @@
-# Brief
+# Contact
 Contacts are the primary object in the system. Essentially all actions are performed through or with a Contact 
 Object and most other objects can reference back to a their origin Contact.
 
