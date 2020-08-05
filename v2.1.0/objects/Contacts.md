@@ -12,7 +12,10 @@ Contacts represent customers which can take on many forms:
  - [Database Schema](#markdown-header-database-schema)
  - [Core Properties](#markdown-header-core-properties)
     - [id](#markdown-header-property-id)
-    
+ - [Peripherals](#markdown-header-peripherals)
+    - [IDSeal](#markdown-header-peripheral-idseal)
+    - [Ontraport](#markdown-header-peripheral-ontraport)
+
 
 ## Database Schema
 
@@ -1141,8 +1144,8 @@ array(
 
 # Peripherals
 
-## IDSeal
+## Peripheral IDSeal
 
 
 
-## Ontraport
+## Peripheral Ontraport
