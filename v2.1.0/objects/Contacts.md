@@ -8,13 +8,6 @@ Contacts represent customers which can take on many forms:
  - Employee
  - Company POC
  - Contact Personal Association (Family)
- 
-<table>
-    <tr>
-        <td>first</td>
-        <td>second</td>
-    </tr>
-</table>
 
 
 ## Database Schema
