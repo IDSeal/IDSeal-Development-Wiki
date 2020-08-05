@@ -362,8 +362,8 @@ array(
     'default' => '',
     'searchable' => true,
     'searchableKey' => 'title',
-
-),
+);
+```
 
 
 
