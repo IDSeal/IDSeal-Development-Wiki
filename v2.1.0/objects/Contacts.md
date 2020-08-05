@@ -10,7 +10,6 @@ Contacts represent customers which can take on many forms:
  - Contact Personal Association (Family)
 
 
-
 ## Database Schema
 
 ```
@@ -79,397 +78,1055 @@ CREATE TABLE `contacts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
 
+
 ## Core Properties
+### id
+
+```
+#!php
+array(
+    'type' => 'numeric',
+    'name' => 'ID',
+    'label' => 'Contact ID',
+    'defaultListed' => true,
+    'listDisplay' => 'viewObjectLink',
+    'viewDisplayCategory' => 'primary',
+    'editable' => false,
+    'source' => 'core',
+);
+```
+
+
+
+
+### stage
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Stage',
+    'label' => 'Stage',
+    'defaultListed' => true,
+    'listDisplay' => 'viewObjectLink',
+    'viewDisplayCategory' => 'primary',
+    'editable' => false,
+    'searchable' => true,
+    'searchableKey' => 'stage',
+    'source' => 'core',
+);
+```
+
+
+
+
+### name
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Full Name',
+    'label' => 'Full Name',
+    'defaultListed' => true,
+    'posttransformers' => 'namePostTransformer',
+    'listDisplay' => 'viewObjectLink',
+    'editable' => false,
+    'source' => 'user',
+    
+),
+
+
+### firstName
+
+```
+#!php
+array(
+    // 'type' => 'string',
+    'name' => 'First Name',
+    'label' => 'First Name',
+    'viewDisplayCategory' => 'details',
+    
+    'required' => true,
+    'type' => 'name',
+    'minLength' => 2,
+    'maxLength' => 128,
+    'searchable' => true,
+    'searchableKey' => 'first_name',
+
+),
+
+
+### lastName
+
+```
+#!php
+array(
+    // 'type' => 'string',
+    'name' => 'Last Name',
+    'label' => 'Last Name',
+    'viewDisplayCategory' => 'details',
+    
+    'required' => true,
+    'type' => 'name',
+    'minLength' => 2,
+    'maxLength' => 128,
+    'searchable' => true,
+    'searchableKey' => 'last_name',
+
+),
+
+
+
+### password
+
+```
+#!php
+array(
+    'type' => 'password',
+    'name' => 'Password',
+    // // 'required' => true, // Required is turned off because Business Direct will create contacts without pw
+    'label' => 'Password',
+    'viewDisplayCategory' => 'details',
+    'editDisplaySpecialDisplay' => 'confirm',
+    'bypassValidationIfEmpty' => true,
+    
+),
+
+
+
+### email
+
+```
+#!php
+array(
+    'type' => 'email',
+    'name' => 'Email',
+    'label' => 'Email',
+    'defaultListed' => true,
+    'viewDisplayCategory' => 'details',
+    
+    'required' => true,
+    'searchable' => true,
+    'searchableKey' => 'email',
+
+    
+),
+
+
+### address
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Address',
+    'label' => 'Address',
+    'viewDisplayCategory' => 'details',
+    
+    'required' => true,
+    
+    'minLength' => 2,
+    'maxLength' => 128,
+    'searchable' => true,
+    'searchableKey' => 'address',
+
+),
+
+
+### address2
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Address2',
+    'label' => 'Address2',
+    'viewDisplayCategory' => 'details',
+    
+    'maxLength' => 128,
+    
+),
+
+
+### city
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'City',
+    'label' => 'City',
+    'viewDisplayCategory' => 'details',
+    
+    'required' => true,
+    'minLength' => 2,
+    'maxLength' => 128,
+    'searchable' => true,
+    'searchableKey' => 'city',
+
+),
+
+
+### state
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'State',
+    'label' => 'State',
+    'viewDisplayCategory' => 'details',
+    
+    'fixedLength' => 2,
+    'required' => true,
+    'searchable' => true,
+    'searchableKey' => 'state',
+
+    
+),
+
+
+### zip
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Zip',
+    'label' => 'Zip',
+    'viewDisplayCategory' => 'details',
+    
+    'required' => true,
+    
+    'pretransformers' => 'numeric',
+    'minLength' => 5,
+    'maxLength' => 10,
+    'searchable' => true,
+    'searchableKey' => 'zip',
+
+),
+
+
+
+### country
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Country',
+    'label' => 'Country',
+    'viewDisplayCategory' => 'details',
+    'minLength' => 2,
+    'maxLength' => 128,
+    'default' => 'USA',
+);
+```
+
+
+
+
+
+### company
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Company',
+    'label' => 'Company',
+    'viewDisplayCategory' => 'details',
+    'minLength' => 2,
+    'maxLength' => 128,
+    'default' => '',
+);
+```
+
+
+
+
+
+### title
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Title',
+    'label' => 'Title',
+    'viewDisplayCategory' => 'details',
+    'minLength' => 2,
+    'maxLength' => 128,
+    'default' => '',
+    'searchable' => true,
+    'searchableKey' => 'title',
+
+),
+
+
+
+### phoneNumber
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Phone Number',
+    'label' => 'Phone Number',
+    'viewDisplayCategory' => 'details',
+    
+    'required' => true,
+    'pretransformers' => 'numeric',
+    'posttransformers' => 'numeric',
+    'fixedLength' => 10,
+    'searchable' => true,
+    'searchableKey' => 'phonenumber',
 
-- id:
-    - type: numeric
-    - name: ID
-    - label: Contact ID
-
-- stage:
-    - type: string
-    - name: Stage
-    - label: Stage
-
-- name:
-    - type: string
-    - name: Full Name
-    - label: Full Name
-
-- firstName:
-    - name: First Name
-    - label: First Name
-    - required: true
-    - type: name
-    - minLength: 2
-    - maxLength: 128
-
-
-- lastName:
-    - name: Last Name
-    - label: Last Name
-    - required: true
-    - type: name
-    - minLength: 2
-    - maxLength: 128
-
-- password:
-    - type: password
-    - name: Password
-    - required: true // Required is turned off because Business Direct will create contacts without pw
-    - label: Password
-
-        
-- email:
-    - type: email
-    - name: Email
-    - label: Email
-    - required: true
-
-- address:
-    - type: string
-    - name: Address
-    - label: Address
-            
-    - required: true
-            
-    - minLength: 2
-    - maxLength: 128
-
-
-- address2:
-    - type: string
-    - name: Address2
-    - label: Address2
-            
-    - maxLength: 128
-            
-
-- city:
-    - type: string
-    - name: City
-    - label: City
-            
-    - required: true
-    - minLength: 2
-    - maxLength: 128
-
-
-- state:
-    - type: string
-    - name: State
-    - label: State
-            
-    - fixedLength: 2
-    - required: true
-
-            
-
-- zip:
-    - type: string
-    - name: Zip
-    - label: Zip
-            
-    - required: true
-            
-    - minLength: 5
-    - maxLength: 10
-
-
-        
-- country:
-    - type: string
-    - name: Country
-    - label: Country
-    - minLength: 2
-    - maxLength: 128
-    - default: USA
-
-        
-- company:
-    - type: string
-    - name: Company
-    - label: Company
-    - minLength: 2
-    - maxLength: 128
-    - default: 
-
-        
-- title:
-    - type: string
-    - name: Title
-    - label: Title
-    - minLength: 2
-    - maxLength: 128
-    - default: 
-
-
-        
-- phoneNumber:
-    - type: string
-    - name: Phone Number
-    - label: Phone Number
-            
-    - required: true
-    - fixedLength: 10
-
-
-- officePhone:
-    - type: string
-    - name: Office Phone
-    - label: Office Phone
-            
-    - required: true
-    - fixedLength: 10
-
-- IBONumber:
-    - type: alphanumeric
-    - name: IBO Number
-    - label: IBO Number
-            
-    - required: true
-    - maxLength: 128
-    - default: 
-
-
-- productBundle:
-    - type: string
-    - name: Product Bundle Number
-    - label: Product Bundle Number
-
-        
-- activationStatus:
-    - default: 
-    - type: string
-    - name: Activation Status
-    - label: Activation Status
-
-        
-- accountStatus:
-    - type: string
-    - name: Account Status
-    - label: Account Status
-
-        
-- acnAccountStatus:
-    - type: string
-    - name: ACN Account Status
-    - label: ACN Account Status
-
-        
-- experianAccountStatus:
-    - type: string
-    - name: Experian Account Status
-    - label: Experian Account Status
-
-        
-- vipErrorReport:
-    - type: string
-    - name: VIP Error Report
-    - label: VIP Error Report
-
-- experianAuthenticationResult:
-    - type: string
-    - name: Experian Authentication Result
-    - label: Experian Authentication Result
-
-- experianErrorReport:
-    - type: string
-    - name: Experian Error Report
-    - label: Experian Error Report
-
-        
-- lastTransactionTotal:
-    - type: string
-    - name: Last Transaction Total
-    - label: Last Transaction Total
-            
-
-- lastTransactionTax:
-    - type: string
-    - name: Last Transaction Tax
-    - label: Last Transaction Tax
-
-        
-- homeSupportLastTransactionTotal:
-    - type: string
-    - name: Last Home Support Transaction Total
-    - label: Last Home Support Transaction Total
-            
-
-- homeSupportLastTransactionTax:
-    - type: string
-    - name: Last Home Support Transaction Tax
-    - label: Last Home Support Transaction Tax
-
-        
-        
-- lastCreditCardStatus:
-    - type: string
-    - name: Last Credit Card Status
-    - label: Last Credit Card Status
-
-        
-        
-        
-        
-- referralPage:
-    - type: string
-    - name: Referral Page
-    - label: Referral Page
-            
-    - required: true
-    - minLength: 7
-    - maxLength: 255
-    - default: https://www.idseal.com/
-
-        
-- ontraportUniqueID:
-    - type: string
-    - name: Ontraport Unique ID
-    - label: Ontraport Unique ID
-
-        
-- clientIP:
-    - type: string
-    - name: Client IP
-    - label: Client IP
-
-- environment:
-    - type: string
-    - name: Environment
-    - label: Environment
-
-        
-        
-- ontraportProductID:
-
-        
-- ontraportContactID:
-    - type: string
-    - name: Ontraport Contact ID
-    - label: Ontraport Contact ID
-
-- experianContactID:
-    - type: string
-    - name: Subscriber ID
-    - label: Subscriber ID
-
-- acnContactID:
-    - type: string
-    - name: ACN Contact ID
-    - label: ACN Contact ID
-
-        
-- homeSupportProduct:
-    - type: string
-    - name: Home Support Product Bundle
-    - label: Home Support Product Bundle
-
-        
-- homeSupportStatus:
-    - type: string
-    - name: Home Support Status
-    - label: Home Support Status
-
-        
-        /**
-         * This is the ACN/VIP -> Product Type field in Ontraport.
-         */
-- ontraportProductACNID:
-    - type: string
-    - name: Ontraport Product ACN ID
-    - label: Ontraport Product ACN ID
-
-        
-- experianProductID:
-
-- acnProductID:
-
-- productType:
-
-- billingZip:
-
-        
-- nextBillingDate:
-    - type: string
-    - name: Next Billing Date
-    - label: Next Billing Date
-
-        
-        
-- enrollmentDate:
-    - type: string
-    - name: Enrollment Date
-    - label: Enrollment Date
-
-        
-        
-- is_authorized:
-    - type: bool
-    - name: Authorized
-    - label: Authorized
-
-- is_transacted:
-    - type: bool
-    - name: Transacted
-    - label: Transacted
-
-- is_enrolled:
-    - type: bool
-    - name: Enrolled
-    - label: Enrolled
-
-- is_authenticated:
-    - type: bool
-    - name: Authenticated
-    - label: Authenticated
-
-        
-- is_cancelled:
-    - type: bool
-    - name: Cancelled
-    - label: Cancelled
-
-        
-- is_employer:
-    - type: bool
-    - name: Employer
-    - label: Employer
-
-        
-- is_employee:
-    - type: bool
-    - name: Employee
-    - label: Employee
-
-        
-- employerContactID:
-    - type: string
-    - name: Employer Contact ID
-    - label: Employer Contact ID
-
-        
-- employerOntraportContactID:
-
-        
-        
-- data:
-    - type: json
-    - default: []
-    - name: Data
-    - label: Data
-
-        
-- created:
-    - type: string
-    - name: Created
-    - label: Created
-
-- updated:
-    - type: string
-    - name: Updated
-    - label: Updated
+),
+
+
+### officePhone
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Office Phone',
+    'label' => 'Office Phone',
+    'viewDisplayCategory' => 'details',
+    
+    'required' => true,
+    'pretransformers' => 'numeric',
+    'posttransformers' => 'numeric',
+    'fixedLength' => 10,
+);
+```
+
+
+
+
+### IBONumber
+
+```
+#!php
+array(
+    'type' => 'alphanumeric',
+    'name' => 'IBO Number',
+    'label' => 'IBO Number',
+    'defaultListed' => true,
+    
+    'required' => true,
+    'maxLength' => 128,
+    'default' => '',
+    'searchable' => true,
+    'searchableKey' => 'ibo_number',
+
+),
+
+
+### productBundle
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Product Bundle Number',
+    'label' => 'Product Bundle Number',
+    'viewDisplayCategory' => 'details',
+    'posttransformers' => 'productBundlePostTransformer',
+);
+```
+
+
+
+
+
+### activationStatus
+
+```
+#!php
+array(
+    'default' => '',
+    'type' => 'string',
+    'name' => 'Activation Status',
+    'label' => 'Activation Status',
+);
+```
+
+
+
+
+
+### accountStatus
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Account Status',
+    'label' => 'Account Status',
+    'defaultListed' => true,
+);
+```
+
+
+
+
+
+### acnAccountStatus
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'ACN Account Status',
+    'label' => 'ACN Account Status',
+    'defaultListed' => true,
+);
+```
+
+
+
+
+
+### experianAccountStatus
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Experian Account Status',
+    'label' => 'Experian Account Status',
+    'defaultListed' => true,
+);
+```
+
+
+
+
+
+### vipErrorReport
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'VIP Error Report',
+    'label' => 'VIP Error Report',
+);
+```
+
+
+
+
+### experianAuthenticationResult
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Experian Authentication Result',
+    'label' => 'Experian Authentication Result',
+);
+```
+
+
+
+
+### experianErrorReport
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Experian Error Report',
+    'label' => 'Experian Error Report',
+);
+```
+
+
+
+
+
+### lastTransactionTotal
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Last Transaction Total',
+    'label' => 'Last Transaction Total',
+    'posttransformers' => 'lastTransactionTotalPostTransformer',
+    
+),
+
+
+### lastTransactionTax
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Last Transaction Tax',
+    'label' => 'Last Transaction Tax',
+    'posttransformers' => 'lastTransactionTaxPostTransformer',
+);
+```
+
+
+
+
+
+### homeSupportLastTransactionTotal
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Last Home Support Transaction Total',
+    'label' => 'Last Home Support Transaction Total',
+    'posttransformers' => 'homeSupportLastTransactionTotalPostTransformer',
+    
+),
+
+
+### homeSupportLastTransactionTax
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Last Home Support Transaction Tax',
+    'label' => 'Last Home Support Transaction Tax',
+    'posttransformers' => 'homeSupportLastTransactionTaxPostTransformer',
+);
+```
+
+
+
+
+
+
+### lastCreditCardStatus
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Last Credit Card Status',
+    'label' => 'Last Credit Card Status',
+);
+```
+
+
+
+
+
+
+
+
+### referralPage
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Referral Page',
+    'label' => 'Referral Page',
+    'viewDisplayCategory' => 'details',
+    'editable' => false,
+    
+    'required' => true,
+    'minLength' => 7,
+    'maxLength' => 255,
+    'default' => 'https://www.idseal.com/',
+);
+```
+
+
+
+
+
+### ontraportUniqueID
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Ontraport Unique ID',
+    'label' => 'Ontraport Unique ID',
+);
+```
+
+
+
+
+
+### clientIP
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Client IP',
+    'label' => 'Client IP',
+    'viewDisplayCategory' => 'details',
+    'editable' => false,
+);
+```
+
+
+
+
+### environment
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Environment',
+    'label' => 'Environment',
+    'viewDisplayCategory' => 'details',
+    'editable' => false,
+    'posttransformers' => 'environmentPostTransformer',
+);
+```
+
+
+
+
+
+
+### productID
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Product',
+    'label' => 'Product',
+    'linked' => true,
+    'defaultListed' => true,
+    'viewDisplayCategory' => 'peripherals',
+    'viewDisplayPosition' => 'idseal',
+    'editable' => false,
+    'watchedByFields' => array('ontraportProductID', 'experianProductID', 'productBundle'),
+    'searchable' => true,
+    'searchableKey' => 'product_id',
+
+),
+
+
+### ontraportProductID
+
+```
+#!php
+array(
+    'posttransformers' => 'ontraportProductIDPostTransformer',
+);
+```
+
+
+
+
+
+### ontraportContactID
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Ontraport Contact ID',
+    'label' => 'Ontraport Contact ID',
+    'defaultListed' => true,
+    'viewDisplayCategory' => 'peripherals',
+    'viewDisplayPosition' => 'ontraport',
+);
+```
+
+
+
+
+### experianContactID
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Subscriber ID',
+    'label' => 'Subscriber ID',
+    'defaultListed' => true,
+    'viewDisplayCategory' => 'peripherals',
+    'viewDisplayPosition' => 'experian',
+);
+```
+
+
+
+
+### acnContactID
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'ACN Contact ID',
+    'label' => 'ACN Contact ID',
+    'defaultListed' => true,
+    'viewDisplayCategory' => 'peripherals',
+    'viewDisplayPosition' => 'acn',
+);
+```
+
+
+
+
+
+### homeSupportProduct
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Home Support Product Bundle',
+    'label' => 'Home Support Product Bundle',
+    'viewDisplayCategory' => 'peripherals',
+    'viewDisplayPosition' => 'ontraport',
+);
+```
+
+
+
+
+
+### homeSupportStatus
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Home Support Status',
+    'label' => 'Home Support Status',
+    'viewDisplayCategory' => 'peripherals',
+    'viewDisplayPosition' => 'ontraport',
+);
+```
+
+
+
+/**
+ * This is the ACN/VIP -> Product Type field in Ontraport.
+ */
+
+
+### ontraportProductACNID
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Ontraport Product ACN ID',
+    'label' => 'Ontraport Product ACN ID',
+    'viewDisplayCategory' => 'peripherals',
+    'viewDisplayPosition' => 'ontraport',
+);
+```
+
+
+
+
+
+### experianProductID
+
+```
+#!php
+array(
+    'posttransformers' => 'experianProductIDPostTransformer',
+);
+```
+
+
+
+
+### acnProductID
+
+```
+#!php
+array(
+    'posttransformers' => 'acnProductIDPostTransformer',
+);
+```
+
+
+
+
+### productType
+
+```
+#!php
+array(
+    'posttransformers' => 'productTypePostTransformer',
+);
+```
+
+
+
+
+### billingZip
+
+```
+#!php
+array(
+    'posttransformers' => 'billingZipPostTransformer',
+);
+```
+
+
+
+
+
+### nextBillingDate
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Next Billing Date',
+    'label' => 'Next Billing Date',
+    'viewDisplayCategory' => 'peripherals',
+    'viewDisplayPosition' => 'ontraport',
+);
+```
+
+
+
+
+
+
+### enrollmentDate
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Enrollment Date',
+    'label' => 'Enrollment Date',
+    'viewDisplayCategory' => 'peripherals',
+    'viewDisplayPosition' => 'ontraport',
+);
+```
+
+
+
+
+
+
+### is_authorized
+
+```
+#!php
+array(
+    'type' => 'bool',
+    'name' => 'Authorized',
+    'label' => 'Authorized',
+    'defaultListed' => true,
+    'listDisplay' => 'objectType',
+    'viewDisplayCategory' => 'primary',
+);
+```
+
+
+
+
+### is_transacted
+
+```
+#!php
+array(
+    'type' => 'bool',
+    'name' => 'Transacted',
+    'label' => 'Transacted',
+    'defaultListed' => true,
+    'listDisplay' => 'objectType',
+    'viewDisplayCategory' => 'primary',
+);
+```
+
+
+
+
+### is_enrolled
+
+```
+#!php
+array(
+    'type' => 'bool',
+    'name' => 'Enrolled',
+    'label' => 'Enrolled',
+    'defaultListed' => true,
+    'listDisplay' => 'objectType',
+    'viewDisplayCategory' => 'primary',
+);
+```
+
+
+
+
+### is_authenticated
+
+```
+#!php
+array(
+    'type' => 'bool',
+    'name' => 'Authenticated',
+    'label' => 'Authenticated',
+    'defaultListed' => true,
+    'listDisplay' => 'objectType',
+    'viewDisplayCategory' => 'primary',
+);
+```
+
+
+
+
+
+### is_cancelled
+
+```
+#!php
+array(
+    'type' => 'bool',
+    'name' => 'Cancelled',
+    'label' => 'Cancelled',
+    'defaultListed' => true,
+    'listDisplay' => 'objectType',
+    'viewDisplayCategory' => 'primary',
+);
+```
+
+
+
+
+
+### is_employer
+
+```
+#!php
+array(
+    'type' => 'bool',
+    'name' => 'Employer',
+    'label' => 'Employer',
+    'viewDisplayCategory' => 'primary',
+);
+```
+
+
+
+
+
+### is_employee
+
+```
+#!php
+array(
+    'type' => 'bool',
+    'name' => 'Employee',
+    'label' => 'Employee',
+    'viewDisplayCategory' => 'primary',
+);
+```
+
+
+
+
+
+### employerContactID
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Employer Contact ID',
+    'label' => 'Employer Contact ID',
+    'linked' => true,
+    'defaultListed' => true,
+    'viewDisplayCategory' => 'peripherals',
+    'viewDisplayPosition' => 'idseal',
+    'editable' => false,
+);
+```
+
+
+
+
+
+### employerOntraportContactID
+
+```
+#!php
+array(
+    'posttransformers' => 'employerOntraportContactIDPostTransformer',
+);
+```
+
+
+
+
+
+
+### data
+
+```
+#!php
+array(
+    'type' => 'json',
+    'default' => '[]',
+    'name' => 'Data',
+    'label' => 'Data',
+    'defaultListed' => true,
+    'listDisplay' => 'json',
+    'pretransformers' => 'ObjectToString',
+    'posttransformers' => 'StringToObject',
+    'viewDisplayCategory' => 'details',
+);
+```
+
+
+
+
+
+### created
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Created',
+    'label' => 'Created',
+    'defaultListed' => true,
+    'listDisplay' => 'date',
+    'viewDisplayCategory' => 'primary',
+);
+```
+
+
+
+
+### updated
+
+```
+#!php
+array(
+    'type' => 'string',
+    'name' => 'Updated',
+    'label' => 'Updated',
+    'defaultListed' => true,
+    'listDisplay' => 'date',
+    'viewDisplayCategory' => 'primary',
+);
+```
+
 
 
 
