@@ -8,7 +8,11 @@ Contacts represent customers which can take on many forms:
  - Employee
  - Company POC
  - Contact Personal Association (Family)
-
+ 
+ - [Database Schema](#markdown-header-database-schema)
+ - [Core Properties](#markdown-header-core-properties)
+    - [id](#markdown-header-property-id)
+    
 
 ## Database Schema
 
@@ -80,7 +84,7 @@ CREATE TABLE `contacts` (
 
 
 ## Core Properties
-### id
+### Property: id
 
 ```
 #!php
@@ -99,7 +103,7 @@ array(
 
 
 
-### stage
+### Property: stage
 
 ```
 #!php
@@ -120,7 +124,7 @@ array(
 
 
 
-### name
+### Property: name
 
 ```
 #!php
@@ -136,7 +140,7 @@ array(
 );
 ```
 
-### firstName
+### Property: firstName
 
 ```
 #!php
@@ -156,7 +160,7 @@ array(
 ```
 
 
-### lastName
+### Property: lastName
 
 ```
 #!php
@@ -177,7 +181,7 @@ array(
 
 
 
-### password
+### Property: password
 
 ```
 #!php
@@ -196,7 +200,7 @@ array(
 
 
 
-### email
+### Property: email
 
 ```
 #!php
@@ -214,7 +218,7 @@ array(
 ```
 
 
-### address
+### Property: address
 
 ```
 #!php
@@ -234,7 +238,7 @@ array(
 ```
 
 
-### address2
+### Property: address2
 
 ```
 #!php
@@ -251,7 +255,7 @@ array(
 
 
 
-### city
+### Property: city
 
 ```
 #!php
@@ -270,7 +274,7 @@ array(
 ```
 
 
-### state
+### Property: state
 
 ```
 #!php
@@ -288,7 +292,7 @@ array(
 ```
 
 
-### zip
+### Property: zip
 
 ```
 #!php
@@ -310,7 +314,7 @@ array(
 
 
 
-### country
+### Property: country
 
 ```
 #!php
@@ -329,7 +333,7 @@ array(
 
 
 
-### company
+### Property: company
 
 ```
 #!php
@@ -348,7 +352,7 @@ array(
 
 
 
-### title
+### Property: title
 
 ```
 #!php
@@ -367,7 +371,7 @@ array(
 
 
 
-### phoneNumber
+### Property: phoneNumber
 
 ```
 #!php
@@ -387,7 +391,7 @@ array(
 ```
 
 
-### officePhone
+### Property: officePhone
 
 ```
 #!php
@@ -407,7 +411,7 @@ array(
 
 
 
-### IBONumber
+### Property: IBONumber
 
 ```
 #!php
@@ -426,7 +430,7 @@ array(
 ```
 
 
-### productBundle
+### Property: productBundle
 
 ```
 #!php
@@ -443,7 +447,7 @@ array(
 
 
 
-### activationStatus
+### Property: activationStatus
 
 ```
 #!php
@@ -459,7 +463,7 @@ array(
 
 
 
-### accountStatus
+### Property: accountStatus
 
 ```
 #!php
@@ -475,7 +479,7 @@ array(
 
 
 
-### acnAccountStatus
+### Property: acnAccountStatus
 
 ```
 #!php
@@ -491,7 +495,7 @@ array(
 
 
 
-### experianAccountStatus
+### Property: experianAccountStatus
 
 ```
 #!php
@@ -507,7 +511,7 @@ array(
 
 
 
-### vipErrorReport
+### Property: vipErrorReport
 
 ```
 #!php
@@ -521,7 +525,7 @@ array(
 
 
 
-### experianAuthenticationResult
+### Property: experianAuthenticationResult
 
 ```
 #!php
@@ -535,7 +539,7 @@ array(
 
 
 
-### experianErrorReport
+### Property: experianErrorReport
 
 ```
 #!php
@@ -550,7 +554,7 @@ array(
 
 
 
-### lastTransactionTotal
+### Property: lastTransactionTotal
 
 ```
 #!php
@@ -565,7 +569,7 @@ array(
 
 
 
-### lastTransactionTax
+### Property: lastTransactionTax
 
 ```
 #!php
@@ -581,7 +585,7 @@ array(
 
 
 
-### homeSupportLastTransactionTotal
+### Property: homeSupportLastTransactionTotal
 
 ```
 #!php
@@ -596,7 +600,7 @@ array(
 
 
 
-### homeSupportLastTransactionTax
+### Property: homeSupportLastTransactionTax
 
 ```
 #!php
@@ -613,7 +617,7 @@ array(
 
 
 
-### lastCreditCardStatus
+### Property: lastCreditCardStatus
 
 ```
 #!php
@@ -631,7 +635,7 @@ array(
 
 
 
-### referralPage
+### Property: referralPage
 
 ```
 #!php
@@ -653,7 +657,7 @@ array(
 
 
 
-### ontraportUniqueID
+### Property: ontraportUniqueID
 
 ```
 #!php
@@ -668,7 +672,7 @@ array(
 
 
 
-### clientIP
+### Property: clientIP
 
 ```
 #!php
@@ -684,7 +688,7 @@ array(
 
 
 
-### environment
+### Property: environment
 
 ```
 #!php
@@ -703,7 +707,7 @@ array(
 
 
 
-### productID
+### Property: productID
 
 ```
 #!php
@@ -723,7 +727,7 @@ array(
 ```
 
 
-### ontraportProductID
+### Property: ontraportProductID
 
 ```
 #!php
@@ -736,7 +740,7 @@ array(
 
 
 
-### ontraportContactID
+### Property: ontraportContactID
 
 ```
 #!php
@@ -753,7 +757,7 @@ array(
 
 
 
-### experianContactID
+### Property: experianContactID
 
 ```
 #!php
@@ -770,7 +774,7 @@ array(
 
 
 
-### acnContactID
+### Property: acnContactID
 
 ```
 #!php
@@ -788,7 +792,7 @@ array(
 
 
 
-### homeSupportProduct
+### Property: homeSupportProduct
 
 ```
 #!php
@@ -805,7 +809,7 @@ array(
 
 
 
-### homeSupportStatus
+### Property: homeSupportStatus
 
 ```
 #!php
@@ -825,7 +829,7 @@ array(
  */
 
 
-### ontraportProductACNID
+### Property: ontraportProductACNID
 
 ```
 #!php
@@ -842,7 +846,7 @@ array(
 
 
 
-### experianProductID
+### Property: experianProductID
 
 ```
 #!php
@@ -854,7 +858,7 @@ array(
 
 
 
-### acnProductID
+### Property: acnProductID
 
 ```
 #!php
@@ -866,7 +870,7 @@ array(
 
 
 
-### productType
+### Property: productType
 
 ```
 #!php
@@ -878,7 +882,7 @@ array(
 
 
 
-### billingZip
+### Property: billingZip
 
 ```
 #!php
@@ -891,7 +895,7 @@ array(
 
 
 
-### nextBillingDate
+### Property: nextBillingDate
 
 ```
 #!php
@@ -909,7 +913,7 @@ array(
 
 
 
-### enrollmentDate
+### Property: enrollmentDate
 
 ```
 #!php
@@ -927,7 +931,7 @@ array(
 
 
 
-### is_authorized
+### Property: is_authorized
 
 ```
 #!php
@@ -944,7 +948,7 @@ array(
 
 
 
-### is_transacted
+### Property: is_transacted
 
 ```
 #!php
@@ -961,7 +965,7 @@ array(
 
 
 
-### is_enrolled
+### Property: is_enrolled
 
 ```
 #!php
@@ -978,7 +982,7 @@ array(
 
 
 
-### is_authenticated
+### Property: is_authenticated
 
 ```
 #!php
@@ -996,7 +1000,7 @@ array(
 
 
 
-### is_cancelled
+### Property: is_cancelled
 
 ```
 #!php
@@ -1014,7 +1018,7 @@ array(
 
 
 
-### is_employer
+### Property: is_employer
 
 ```
 #!php
@@ -1030,7 +1034,7 @@ array(
 
 
 
-### is_employee
+### Property: is_employee
 
 ```
 #!php
@@ -1046,7 +1050,7 @@ array(
 
 
 
-### employerContactID
+### Property: employerContactID
 
 ```
 #!php
@@ -1066,7 +1070,7 @@ array(
 
 
 
-### employerOntraportContactID
+### Property: employerOntraportContactID
 
 ```
 #!php
@@ -1080,7 +1084,7 @@ array(
 
 
 
-### data
+### Property: data
 
 ```
 #!php
@@ -1101,7 +1105,7 @@ array(
 
 
 
-### created
+### Property: created
 
 ```
 #!php
@@ -1118,7 +1122,7 @@ array(
 
 
 
-### updated
+### Property: updated
 
 ```
 #!php
