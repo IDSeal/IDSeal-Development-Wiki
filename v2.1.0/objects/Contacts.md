@@ -8,8 +8,76 @@ Contacts represent customers which can take on many forms:
  - Employee
  - Company POC
  - Contact Personal Association (Family)
+ 
+## Database Schema
 
-## Properties
+```
+#!mysql
+
+CREATE TABLE `contacts` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `stage` varchar(255) DEFAULT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `company` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  
+  `phonenumber` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `address2` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `zip` varchar(255) DEFAULT NULL,
+  
+  `ibo_number` varchar(255) DEFAULT NULL,
+  
+  `activation_status` varchar(255) DEFAULT NULL,
+  `account_status` varchar(255) DEFAULT NULL,
+  `acn_account_status` varchar(255) DEFAULT NULL,
+  `experian_account_status` varchar(255) DEFAULT NULL,
+  
+  `client_ip` varchar(255) DEFAULT NULL,
+  `environment` varchar(255) DEFAULT 'development',
+  
+  `product_id` varchar(255) DEFAULT NULL,
+  `ontraport_product_acn_id` varchar(255) DEFAULT NULL,
+  
+  `referral_page` varchar(255) DEFAULT NULL,
+  
+  `ontraport_contact_id` varchar(255) DEFAULT NULL,
+  `experian_subscriber_number` varchar(255) DEFAULT NULL,
+  `acn_contact_id` varchar(255) DEFAULT NULL,
+  `csi_contact_id` varchar(255) DEFAULT NULL,
+  
+  `authnet_customer_id` varchar(255) DEFAULT NULL,
+  `authnet_customer_profile_id` varchar(255) DEFAULT NULL,
+  `authnet_customer_payment_id` varchar(255) DEFAULT NULL,
+  `authnet_customer_subcription_id` varchar(255) DEFAULT NULL,
+  `authnet_transaction_authorization` varchar(255) DEFAULT NULL,
+  `authnet_transaction_id` varchar(255) DEFAULT NULL,
+  
+  `data` text,
+  
+  `is_authorized` tinyint(1) DEFAULT '0',
+  `is_transacted` tinyint(1) DEFAULT '0',
+  `is_ontraport_contact` tinyint(1) DEFAULT '0',
+  `is_enrolled` tinyint(1) DEFAULT '0',
+  `is_authenticated` tinyint(1) DEFAULT '0',
+  `employer_contact_id` varchar(255) DEFAULT NULL,
+  `is_cancelled` tinyint(1) DEFAULT '0',
+  `is_employer` tinyint(1) DEFAULT '0',
+  `is_employee` tinyint(1) DEFAULT '0',
+  
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+```
+
+## Core Properties
 
 - id:
     - type: numeric
@@ -27,7 +95,6 @@ Contacts represent customers which can take on many forms:
     - label: Full Name
 
 - firstName:
-    // type: string
     - name: First Name
     - label: First Name
     - required: true
@@ -37,7 +104,6 @@ Contacts represent customers which can take on many forms:
 
 
 - lastName:
-    // 'type: string
     - name: Last Name
     - label: Last Name
     - required: true
@@ -45,8 +111,6 @@ Contacts represent customers which can take on many forms:
     - minLength: 2
     - maxLength: 128
 
-
-        
 - password:
     - type: password
     - name: Password
@@ -343,32 +407,27 @@ Contacts represent customers which can take on many forms:
     - type: bool
     - name: Authorized
     - label: Authorized
-    - listDisplay: objectType
 
 - is_transacted:
     - type: bool
     - name: Transacted
     - label: Transacted
-    - listDisplay: objectType
 
 - is_enrolled:
     - type: bool
     - name: Enrolled
     - label: Enrolled
-    - listDisplay: objectType
 
 - is_authenticated:
     - type: bool
     - name: Authenticated
     - label: Authenticated
-    - listDisplay: objectType
 
         
 - is_cancelled:
     - type: bool
     - name: Cancelled
     - label: Cancelled
-    - listDisplay: objectType
 
         
 - is_employer:
@@ -387,7 +446,6 @@ Contacts represent customers which can take on many forms:
     - type: string
     - name: Employer Contact ID
     - label: Employer Contact ID
-    - linked: true
 
         
 - employerOntraportContactID:
@@ -399,17 +457,27 @@ Contacts represent customers which can take on many forms:
     - default: []
     - name: Data
     - label: Data
-    - listDisplay: json
 
         
 - created:
     - type: string
     - name: Created
     - label: Created
-    - listDisplay: date
 
 - updated:
     - type: string
     - name: Updated
     - label: Updated
-    - listDisplay: date
+
+
+
+# Peripherals
+
+## IDSeal
+
+
+
+## Ontraport
+
+
+
