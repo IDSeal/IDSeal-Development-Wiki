@@ -26,7 +26,7 @@ Product Bundle.
 
 ## Product Package Fields
 
-![Product Packages Example](../assets/ProductPackagesExplained.png "Product Packages Example")
+![Product Packages Example](../assets/CompanyProductPackageExplained.png "Product Packages Example")
 
 
 ## Slots
