@@ -24,6 +24,19 @@ this map to find any long distance relationship, such as a License finding it's 
 ---
 
 ## New Verbiage
+In the old version of Core, Platinum and Platinum Plus were their own Products. This has now
+changed slightly - now they are considered Product Bundles.
+
+This is because in the new v2.1.0 system, we now have a more dynamic means of mixing and matching
+the various services and purchasable options that we offer.
+
+For this to work though, there is some verbiage changes for the third party services and integrations 
+that we connect our customers too, such as Experian, ACN and AntiVirus. These are now called
+the Products in our system, and what was Platinum and Platinum Plus are now called the Product
+Bundles.
+
+This way we can create a Product Bundle with any number of combinations of Products.
+
 This new system comes with some new Objects and verbiage that you will want to be familiar with.
 Most of the common Objects are the same, but some of the new or changes ones are below.
 

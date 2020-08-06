@@ -1,28 +1,27 @@
-# Objects And Relationships
+# Product Bundles Explained
 
- - [Visual](#user-content-visual)
  - [Overview](#user-content-overview)
- - [More Information](#user-content-more-information)
+ - [Visual](#user-content-visual)
+ - [Example Explained](#user-content-example-explained)
  - [Next Section](#user-content-next-section)
+
+## Overview
+A Product Bundle is a group of Products that will be offered to end users when they are signing up.
+It also uses Billing Options to determine pricing options and restrictions during sign up.
+
+A Product Bundle will also be used for creating special pricing options for Companies or Special Offers.
 
 ## Visual
 
 ![Product Bundles Example](../assets/ProductBundlesExample.png "Product Bundles Example")
 
-## Overview
-In the old version of Core, Platinum and Platinum Plus were their own Products. This has now
-changed slightly - now they are considered Product Bundles.
 
-This is because in the new v2.1.0 system, we now have a more dynamic means of mixing and matching
-the various services and purchasable options that we offer.
+## Example Explained
+In the example above, the Platinum and Platinum Plus Product Bundles are shown.
 
-For this to work though, there is some verbiage changes for the third party services and integrations 
-that we connect our customers too, such as Experian, ACN and AntiVirus. These are now called
-the Products in our system, and what was Platinum and Platinum Plus are now called the Product
-Bundles.
+You can see that the Platinum Product Bundle connects to the ACN Product, and the Experian Basic Product.
 
-This way we can create a Product Bundle with any number of combinations of Products.
-
+But, while the Platinum Plus is similar, it actually points to the Experian Plus Product.
 
 ## Next Section
 

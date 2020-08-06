@@ -1,18 +1,27 @@
-# Objects And Relationships
+# Billing Options Explained
 
- - [Visual](#user-content-visual)
  - [Overview](#user-content-overview)
-    - [Primary Object - The Contact Object](#user-content-primary-object-the-contact-object)
- - [More Information](#user-content-more-information)
+ - [Visual](#user-content-visual)
+ - [Example Explained](#user-content-example-explained)
  - [Next Section](#user-content-next-section)
+
+## Overview
+Billing Options are essentially the symantics of a Product Bundle when a Contact
+is creating a Subscription.
+
+They dictate the price, the enrollment period dates, any special key's that are 
+used
+
 
 ## Visual
 
 ![Billing Options Example](../assets/BillingOptionsExample.png "Billing Options Example")
 
-## Overview
 
-## More Information
+## Example Explained
+
+
+
 
 ## Next Section
 
