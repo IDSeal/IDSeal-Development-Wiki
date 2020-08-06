@@ -16,8 +16,17 @@ within the system. On the platform level, all Objects will all have the ability 
 this map to find any long distance relationship, such as a License finding it's owner Contact.
 
 ### Primary Object - The Contact Object
-The primary Object in Core is the Contact Object. Most all other functions are done through or 
-with a Contact Object in context.
+The primary Object in Core is the Contact Object. Most all functions are done through or with
+a Contact Object in context. This includes Companies, which perform their actions through a 
+Point Of Contact (aka POC) Contact Object, which will hold the respective Subscription. 
+
+Even Product Bundles, Products and Billing Options are essentially only utilized in reference
+to either a Contact or their Subscription.
+
+The only exception to this is a Batch Object, which is used by the Throttler to run a group of
+Throttle Requests.
+
+#### Contact Enrollment Journery Example
 
 Take for example the sign up process through the OEP:
 
@@ -34,8 +43,7 @@ Take for example the sign up process through the OEP:
     - ProductState creates License if Product requires it.  
 
 ## More Information
-If you'd like to learn more about the Objects
-
+If you'd like to learn more about the Objects, you can see the [Core Objects Developer Documentation](../Objects).
 
 ## Next Section
 

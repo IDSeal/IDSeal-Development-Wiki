@@ -15,11 +15,6 @@ At the highest level, this is the relationship between all the Core Objects oper
 within the system. On the platform level, all Objects will all have the ability to traverse 
 this map to find any long distance relationship, such as a License finding it's owner Contact.
 
-
-## More Information
-If you'd like to learn more about the Objects
-
-
 ## Next Section
 
 [Product Packages Explained](ProductPackagesExplained)
