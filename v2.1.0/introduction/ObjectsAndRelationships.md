@@ -42,6 +42,7 @@ Most of the common Objects are the same, but some of the new or changes ones are
 
  - [Product](#user-content-product)
  - [Product Bundle](#user-content-product-bundle)
+ - [Product Package](#user-content-product-package)
  - [Billing Option](#user-content-billing-option)
  - [Product State](#user-content-product-state)
 
