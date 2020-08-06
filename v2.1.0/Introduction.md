@@ -5,4 +5,4 @@
 ## Introduction
 
 
-![Product Bundles Example]("assets/ProductBundlesExample.png" "Product Bundles Example")
+![Product Bundles Example](assets/ProductBundlesExample.png "Product Bundles Example")
