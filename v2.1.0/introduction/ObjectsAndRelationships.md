@@ -8,7 +8,7 @@
 
 ## Visual
 
-![Object Relationship Map](assets/ObjectRelationshipMap.png "Object Relationship Map")
+![Object Relationship Map](../assets/ObjectRelationshipMap.png "Object Relationship Map")
 
 ## Overview
 At the highest level, this is the relationship between all the Core Objects operating 
