@@ -11,6 +11,6 @@ documents in order as seen below.
  - [Objects And Relationships](introduction/ObjectsAndRelationships.md)
  - [Products Explained](introduction/ProductsExplained.md)
  - [Product Bundles Explained](introduction/ProductBundlesExplained.md)
- - [Product Packages Explained](introduction/ProductPackagesExplained.md)
  - [Billing Options Explained](introduction/BillingOptionsExplained.md)
+ - [Product Packages Explained](introduction/ProductPackagesExplained.md)
 
