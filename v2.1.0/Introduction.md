@@ -1,8 +1,11 @@
 # Introduction
 
- - Introduction
+ - [Overview](#markdown-header-overview)
+ 
 
-## Introduction
+## Overview
+The following is a series of documents that provide insight into the new
+Core v2.1.0 system. To best understand this system, read the following 
+documents in order as seen below.
 
-
-![Product Bundles Example](assets/ProductBundlesExample.png "Product Bundles Example")
+ - [Objects And Relationships](/introduction/ObjectsAndRelationships)
