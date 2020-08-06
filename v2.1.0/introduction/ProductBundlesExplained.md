@@ -26,6 +26,6 @@ This way we can create a Product Bundle with any number of combinations of Produ
 
 ## Next Section
 
-[Billing Options Explained](BillingOptionsExplained)
+[Billing Options Explained](BillingOptionsExplained.md)
 
-[Back To Introduction](../Introduction)
+[Back To Introduction](../Introduction.md)

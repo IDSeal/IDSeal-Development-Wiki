@@ -98,12 +98,12 @@ Take for example the sign up process through the OEP:
 ---
 
 ## More Information
-If you'd like to learn more about the Objects, you can see the [Core Objects Developer Documentation](../Objects).
+If you'd like to learn more about the Objects, you can see the [Core Objects Developer Documentation](../Objects.md).
 
 ---
 
 ## Next Section
 
-[Products Explained](ProductsExplained)
+[Products Explained](ProductsExplained.md)
 
-[Back To Introduction](../Introduction)
+[Back To Introduction](../Introduction.md)

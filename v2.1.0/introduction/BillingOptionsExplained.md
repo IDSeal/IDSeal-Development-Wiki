@@ -16,6 +16,6 @@
 
 ## Next Section
 
-[Product Packages Explained](ProductPackagesExplained)
+[Product Packages Explained](ProductPackagesExplained.md)
 
-[Back To Introduction](../Introduction)
+[Back To Introduction](../Introduction.md)
