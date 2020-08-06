@@ -45,7 +45,7 @@ When a Contact creates a Subscription for a Product Bundle, the system will crea
 State Object for each Product in the Product Bundle. 
 
 What this means is that while the Product handles all the operations and features of the third
-party services, a Contact's actual data, status, etc. is all stores in a Product State.
+party services, a Contact's actual data, status, etc. is all stored in a Product State.
 
 So when a Contact is Deactivated, the Product will take the information in the Product State,
 perform the necessary deactivation functions with the third party service, and then update the
