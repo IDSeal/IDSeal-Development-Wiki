@@ -1,9 +1,9 @@
 # Objects
 
- - [Introduction](#markdown-header-introduction)
- - [Object Relationships](#markdown-header-object-relationships)
- - [Object Overviews](#markdown-header-object-overviews)
-    - [Contact](#markdown-header-contact)
+ - [Introduction](#user-content-introduction)
+ - [Object Relationships](#user-content-object-relationships)
+ - [Object Overviews](#user-content-object-overviews)
+    - [Contact](#user-content-contact)
 
 ## Introduction
 The primary Object in Core is the Contact Objects. Most all other functions

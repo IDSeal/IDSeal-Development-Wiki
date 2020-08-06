@@ -1,16 +1,16 @@
 # Objects And Relationships
 
- - [Overview](#markdown-header-overview)
- - [Visual](#markdown-header-visual)
- - [New Verbiage](#markdown-header-new-verbiage)
-    - [Product](#markdown-header-product)
-    - [Product Bundle](#markdown-header-product-bundle)
-    - [Billing Option](#markdown-header-billing-option)
-    - [Product State](#markdown-header-product-state)
- - [Primary Object - The Contact Object](#markdown-header-primary-object-the-contact-object)
-    - [Contact Enrollment Journery Example](#markdown-header-contact-enrollment-journery-example)
- - [More Information](#markdown-header-more-information)
- - [Next Section](#markdown-header-next-section)
+ - [Overview](#user-content-overview)
+ - [Visual](#user-content-visual)
+ - [New Verbiage](#user-content-new-verbiage)
+    - [Product](#user-content-product)
+    - [Product Bundle](#user-content-product-bundle)
+    - [Billing Option](#user-content-billing-option)
+    - [Product State](#user-content-product-state)
+ - [Primary Object - The Contact Object](#user-content-primary-object-the-contact-object)
+    - [Contact Enrollment Journery Example](#user-content-contact-enrollment-journery-example)
+ - [More Information](#user-content-more-information)
+ - [Next Section](#user-content-next-section)
 
 ## Overview
 At the highest level, this is the relationship between all the Core Objects operating 
@@ -27,10 +27,10 @@ this map to find any long distance relationship, such as a License finding it's 
 This new system comes with some new Objects and verbiage that you will want to be familiar with.
 Most of the common Objects are the same, but some of the new or changes ones are below.
 
- - [Product](#markdown-header-product)
- - [Product Bundle](#markdown-header-product-bundle)
- - [Billing Option](#markdown-header-billing-option)
- - [Product State](#markdown-header-product-state)
+ - [Product](#user-content-product)
+ - [Product Bundle](#user-content-product-bundle)
+ - [Billing Option](#user-content-billing-option)
+ - [Product State](#user-content-product-state)
 
 
 ### Product

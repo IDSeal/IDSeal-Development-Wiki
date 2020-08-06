@@ -9,12 +9,12 @@ Contacts represent customers which can take on many forms:
  - Company POC
  - Contact Personal Association (Family)
  
- - [Database Schema](#markdown-header-database-schema)
- - [Core Properties](#markdown-header-core-properties)
-    - [id](#markdown-header-property-id)
- - [Peripherals](#markdown-header-peripherals)
-    - [IDSeal](#markdown-header-peripheral-idseal)
-    - [Ontraport](#markdown-header-peripheral-ontraport)
+ - [Database Schema](#user-content-database-schema)
+ - [Core Properties](#user-content-core-properties)
+    - [id](#user-content-property-id)
+ - [Peripherals](#user-content-peripherals)
+    - [IDSeal](#user-content-peripheral-idseal)
+    - [Ontraport](#user-content-peripheral-ontraport)
 
 
 ## Database Schema
