@@ -3,6 +3,7 @@
  - [Overview](#user-content-overview)
  - [Visual](#user-content-visual)
  - [Example Explained](#user-content-example-explained)
+ - [Product States](#user-content-product-states)
  - [Next Section](#user-content-next-section)
 
 ## Overview
@@ -32,10 +33,23 @@ to operate with the third party service. These fields are mapped from the Contac
 transformed into the appropriate field names for the third party API method being invoked.
 
 A Product also will have several Built In Processes that handle the various features of the third
-party service, as well as managing the Contact and Product states. 
+party service, as well as managing the Contact and Product States. 
 
 For example, above we see that the Experian Basic Product will Enroll a Contact, then loop a 
 Authentication Check process. From there it can Authenticate, Deactivate or Reactivate.
+
+---
+
+## Product States
+When a Contact creates a Subscription for a Product Bundle, the system will create a Product
+State Object for each Product in the Product Bundle. 
+
+What this means is that while the Product handles all the operations and features of the third
+party services, a Contact's actual data, status, etc. is all stores in a Product State.
+
+So when a Contact is Deactivated, the Product will take the information in the Product State,
+perform the necessary deactivation functions with the third party service, and then update the
+Product State's status as Deactivated.
 
 ---
 
