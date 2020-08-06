@@ -11,8 +11,8 @@
 
 ## Overview
 
+
 ## Next Section
 
-[Billing Options Explained](BillingOptionsExplained)
 
 [Back To Introduction](../Introduction)

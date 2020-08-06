@@ -16,6 +16,6 @@
 
 ## Next Section
 
-[Product Bundles Explained](ProductBundlesExplained)
+[Product Packages Explained](ProductPackagesExplained)
 
 [Back To Introduction](../Introduction)
