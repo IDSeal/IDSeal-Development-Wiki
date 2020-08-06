@@ -10,7 +10,7 @@ Billing Options are essentially the symantics of a Product Bundle when a Contact
 is creating a Subscription.
 
 They dictate the price, the enrollment period dates, any special key's that are 
-used
+used for the sign up forms.
 
 
 ## Visual
