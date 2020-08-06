@@ -51,6 +51,8 @@ So when a Contact is Deactivated, the Product will take the information in the P
 perform the necessary deactivation functions with the third party service, and then update the
 Product State's status as Deactivated.
 
+![Product Packages Example](../assets/ProductStatesExplained .png "Product Packages Example")
+
 ---
 
 ## Next Section
