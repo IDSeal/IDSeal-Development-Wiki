@@ -2,13 +2,13 @@
 
  - [Overview](#markdown-header-overview)
  - [Visual](#markdown-header-visual)
- - [Primary Object - The Contact Object](#markdown-header-primary-object-the-contact-object)
-    - [Contact Enrollment Journery Example](#markdown-header-contact-enrollment-journery-example)
  - [New Verbiage](#markdown-header-new-verbiage)
     - [Product](#markdown-header-product)
     - [Product Bundle](#markdown-header-product-bundle)
     - [Billing Option](#markdown-header-billing-option)
     - [Product State](#markdown-header-product-state)
+ - [Primary Object - The Contact Object](#markdown-header-primary-object-the-contact-object)
+    - [Contact Enrollment Journery Example](#markdown-header-contact-enrollment-journery-example)
  - [More Information](#markdown-header-more-information)
  - [Next Section](#markdown-header-next-section)
 
@@ -20,33 +20,6 @@ this map to find any long distance relationship, such as a License finding it's 
 ## Visual
 
 ![Object Relationship Map](../assets/ObjectRelationshipMap.png "Object Relationship Map")
-
-## Primary Object - The Contact Object
-The primary Object in Core is the Contact Object. Most all functions are done through or with
-a Contact Object in context. This includes Companies, which perform their actions through a 
-Point Of Contact (aka POC) Contact Object, which will hold the respective Subscription. 
-
-Even Product Bundles, Products and Billing Options are essentially only utilized in reference
-to either a Contact or their Subscription.
-
-The only exception to this is a Batch Object, which is used by the Throttler to run a group of
-Throttle Requests.
-
-### Contact Enrollment Journery Example
-
-Take for example the sign up process through the OEP:
-
- - User submits data to sign up for the "Monthly" BillingOption for the "Platinum" ProductBundle.
- - Contact is created.
- - Contact creates Credit Card.
- - Contact creates Subscription for the "Monthly" BillingOption for the "Platinum" ProductBundle.
-    - Subscription creates a ProductState for each Product in ProductBundle.
- - Subscription creates a Transaction with the Contact Credit Card.
-    - Transaction creates TaxCharges based on BillingOption TaxCategories and Contact zip.
- - Subscription creates an Invoice.
- - Transaction attempts an Authorization and on success Charges.
- - Subscription activates all ProductStates
-    - ProductState creates License if Product requires it.  
 
 ## New Verbiage
 This new system comes with some new Objects and verbiage that you will want to be familiar with.
@@ -90,6 +63,34 @@ For example, a Subscription to the "Platinum" Product Bundle would have two Prod
 
 Each of these states would hold information on status, activation and authentication, errors, etc.
 
+
+## Primary Object - The Contact Object
+The primary Object in Core is the Contact Object. Most all functions are done through or with
+a Contact Object in context. This includes Companies, which perform their actions through a 
+Point Of Contact (aka POC) Contact Object, which will hold the respective Subscription. 
+
+Even Product Bundles, Products and Billing Options are essentially only utilized in reference
+to either a Contact or their Subscription.
+
+The only exception to this is a Batch Object, which is used by the Throttler to run a group of
+Throttle Requests.
+
+### Contact Enrollment Journery Example
+
+Take for example the sign up process through the OEP:
+
+ - User submits data to sign up for the "Monthly" BillingOption for the "Platinum" ProductBundle.
+ - Contact is created.
+ - Contact creates Credit Card.
+ - Contact creates Subscription for the "Monthly" BillingOption for the "Platinum" ProductBundle.
+    - Subscription creates a ProductState for each Product in ProductBundle.
+ - Subscription creates a Transaction with the Contact Credit Card.
+    - Transaction creates TaxCharges based on BillingOption TaxCategories and Contact zip.
+ - Subscription creates an Invoice.
+ - Transaction attempts an Authorization and on success Charges.
+ - Subscription activates all ProductStates
+    - ProductState creates License if Product requires it.  
+    
 
 ## More Information
 If you'd like to learn more about the Objects, you can see the [Core Objects Developer Documentation](../Objects).
