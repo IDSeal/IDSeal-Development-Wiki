@@ -2,7 +2,8 @@
 
  - [Overview](#user-content-overview)
  - [Visual](#user-content-visual)
-    - [Primary Object - The Contact Object](#user-content-primary-object-the-contact-object)
+ - [Example Explained](#user-content-example-explained)
+ - [Product Package Fields](#user-content-product-package-fields)
  - [Next Section](#user-content-next-section)
 
 ## Overview
@@ -10,9 +11,16 @@
 
 ## Visual
 
-![Product Packages Example](../assets/ProductPackagesExplained.png "Product Packages Example")
 
 ![Product Packages Example](../assets/ProductPackagesExample.png "Product Packages Example")
+
+## Example Explained
+
+
+
+## Product Package Fields
+
+![Product Packages Example](../assets/ProductPackagesExplained.png "Product Packages Example")
 
 
 ## Slots
@@ -22,5 +30,6 @@ having a limited amount of enrollment. For these cases, the amount of slots tota
 
 ## Next Section
 
+[Back To Introduction](../Introduction.md)
 
 [Back To Introduction](../Introduction.md)
