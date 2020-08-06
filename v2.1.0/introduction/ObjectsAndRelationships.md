@@ -20,13 +20,14 @@ The primary Object in Core is the Contact Object. Most all other functions are d
 with a Contact Object in context.
 
 Take for example the sign up process through the OEP:
+
  - User submits data to sign up for the "Monthly" BillingOption for the "Platinum" ProductBundle.
  - Contact is created.
  - Contact creates Credit Card.
  - Contact creates Subscription for the "Monthly" BillingOption for the "Platinum" ProductBundle.
-   - Subscription creates a ProductState for each Product in ProductBundle.
+    - Subscription creates a ProductState for each Product in ProductBundle.
  - Subscription creates a Transaction with the Contact Credit Card.
-   - Transaction creates Taxes based on BillingOption TaxCharges and Contact zip.
+    - Transaction creates Taxes based on BillingOption TaxCharges and Contact zip.
  - Subscription creates an Invoice.
  - Transaction attempts an Authorization and on success Charges.
  - Subscription activates all ProductStates
