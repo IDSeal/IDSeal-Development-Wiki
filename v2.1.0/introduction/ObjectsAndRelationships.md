@@ -57,10 +57,13 @@ and checking for Authentication status.
 This is a group of Products that will be offered to end users when they are signing up, such as
 Platinum - which is a combination of the Experian and ACN Products.
 
+### Product Package
+This is a group of Products Bundles, usually as an offer to a Company. It is responsible for 
+defining which Product Bundles are available, the enrollment period and available slots if desired.
+
 ### Billing Option
 A Billing Option belongs to a Product Bundle, and defines the frequency and price of a Subscription.
-It is also responsible for the Tax Categories applied to the Transaction, as well as defining the 
-enrollment period and available slots if desired.
+It is also responsible for the Tax Categories applied to the Transaction.
 
 When a Contact creates a Subscription for a Product Bundle, they are really creating it for the 
 Billing Option they selected for that particular Product Bundle. For example, a Subscription for
