@@ -9,3 +9,6 @@ Core v2.1.0 system. To best understand this system, read the following
 documents in order as seen below.
 
  - [Objects And Relationships](introduction/ObjectsAndRelationships)
+ - [Product Bundles Explained](introduction/ProductBundlesExplained)
+ - [Product Packages Explained](introduction/ProductPackagesExplained)
+ - [Billing Options Explained](introduction/BillingOptionsExplained)
