@@ -104,6 +104,6 @@ If you'd like to learn more about the Objects, you can see the [Core Objects Dev
 
 ## Next Section
 
-[Product Bundles Explained](ProductBundlesExplained)
+[Products Explained](ProductsExplained)
 
 [Back To Introduction](../Introduction)
