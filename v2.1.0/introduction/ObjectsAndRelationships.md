@@ -21,6 +21,8 @@ this map to find any long distance relationship, such as a License finding it's 
 
 ![Object Relationship Map](../assets/ObjectRelationshipMap.png "Object Relationship Map")
 
+---
+
 ## New Verbiage
 This new system comes with some new Objects and verbiage that you will want to be familiar with.
 Most of the common Objects are the same, but some of the new or changes ones are below.
@@ -63,6 +65,7 @@ For example, a Subscription to the "Platinum" Product Bundle would have two Prod
 
 Each of these states would hold information on status, activation and authentication, errors, etc.
 
+---
 
 ## Primary Object - The Contact Object
 The primary Object in Core is the Contact Object. Most all functions are done through or with
@@ -92,8 +95,12 @@ Take for example the sign up process through the OEP:
     - ProductState creates License if Product requires it.  
     
 
+---
+
 ## More Information
 If you'd like to learn more about the Objects, you can see the [Core Objects Developer Documentation](../Objects).
+
+---
 
 ## Next Section
 
