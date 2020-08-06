@@ -32,11 +32,10 @@ This way we can create a Product Bundle with any number of combinations of Produ
 This new system comes with some new Objects and verbiage that you will want to be familiar with.
 Most of the common Objects are the same, but some of the new or changes ones are below.
 
- - [New Verbiage](#markdown-header-new-verbiage)
-    - [Product](#markdown-header-product)
-    - [Product Bundle](#markdown-header-product-bundle)
-    - [Billing Option](#markdown-header-billing-option)
-    - [Product State](#markdown-header-product-state)
+ - [Product](#markdown-header-product)
+ - [Product Bundle](#markdown-header-product-bundle)
+ - [Billing Option](#markdown-header-billing-option)
+ - [Product State](#markdown-header-product-state)
 
 
 ### Product
